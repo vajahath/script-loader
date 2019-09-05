@@ -1,0 +1,30 @@
+{
+  "name": "load-script-2",
+  "version": "1.0.0",
+  "description": "Promise based script loading for browsers",
+  "browser": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-full": "tsc && npm run terser",
+    "build": "tsc",
+    "terser": "terser --compress --mangle -o dist/index.js -- dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vajahath/load-script-2.git"
+  },
+  "keywords": [
+    "browser"
+  ],
+  "author": "Vajahath Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vajahath/load-script-2/issues"
+  },
+  "homepage": "https://github.com/vajahath/load-script-2#readme",
+  "devDependencies": {
+    "terser": "^4.2.1",
+    "typescript": "^3.6.2"
+  }
+}
