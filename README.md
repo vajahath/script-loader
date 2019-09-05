@@ -7,6 +7,7 @@ Promise based dynamic scripts loader for **browsers**.
 - Load script files on demand (for better page load performance).
 - Duplication check (skips if the same script is already loaded).
 - Typescript ready.
+- Promise ready.
 - Tiny (1.15 KB).
 
 ## Install
