@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-full": "tsc && npm run terser",
     "build": "tsc",
-    "terser": "terser --compress --mangle -o dist/index.js -- dist/index.js"
+    "terser": "terser --compress --mangle -o dist/index.js -- dist/index.js",
+    "prepublishOnly": "npm run build-full"
   },
   "repository": {
     "type": "git",
