@@ -21,6 +21,8 @@ npm i load-script-2
 ```ts
 import { scriptLoader } from 'load-script-2';
 
+// ...
+
 await scriptLoader([
   { scr: 'https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.js' },
 
