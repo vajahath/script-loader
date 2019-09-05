@@ -16,7 +16,9 @@
     "url": "git+https://github.com/vajahath/load-script-2.git"
   },
   "keywords": [
-    "browser"
+    "browser",
+    "script",
+    "load"
   ],
   "author": "Vajahath Ahmed",
   "license": "MIT",
