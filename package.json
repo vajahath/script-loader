@@ -1,5 +1,5 @@
 {
-  "name": "load-script-2",
+  "name": "@vaju/script-loader",
   "version": "1.0.0",
   "description": "Promise based script loading for browsers",
   "browser": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vajahath/load-script-2.git"
+    "url": "git+https://github.com/vajahath/script-loader.git"
   },
   "keywords": [
     "browser",
@@ -23,9 +23,9 @@
   "author": "Vajahath Ahmed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vajahath/load-script-2/issues"
+    "url": "https://github.com/vajahath/script-loader/issues"
   },
-  "homepage": "https://github.com/vajahath/load-script-2#readme",
+  "homepage": "https://github.com/vajahath/script-loader#readme",
   "devDependencies": {
     "terser": "^4.2.1",
     "typescript": "^3.6.2"

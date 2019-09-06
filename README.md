@@ -1,6 +1,6 @@
-# load-script-2
+# script-loader
 
-Promise based dynamic scripts loader for **browsers**.
+Promise based dynamic scripts loader for **browsers**. (`@vaju/script-loader`)
 
 ## Why
 
@@ -8,12 +8,12 @@ Promise based dynamic scripts loader for **browsers**.
 - Duplication check _(skip loading if the same script is already loaded)_.
 - Typescript ready.
 - Promise ready.
-- No dependencies, tiny (1.15 KB).
+- No dependencies, tiny (1.2 KB).
 
 ## Install
 
 ```bash
-npm i load-script-2
+npm i @vaju/script-loader
 ```
 
 ## Usage
