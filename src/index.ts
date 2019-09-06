@@ -16,7 +16,20 @@ const DEFAULTS: IScriptLoaderOpt = {
   type: 'text/javascript',
 };
 
-export function scriptLoader(dynamicScripts: IDynamicScript[], doc = document) {
+export function scriptLoader(
+  dynamicScripts: IDynamicScript[],
+  hostElement: HTMLElement,
+  doc = document,
+) {
+  // where to attach the script tag
+  hostElement =
+    hostElement ||
+    doc.getElementsByTagName('head')[0] ||
+    doc.getElementsByTagName('body')[0];
+  if (!hostElement) {
+    throw new Error('No <head> or <body> or custom tags found.');
+  }
+
   // get all loaded scripts
   const allScriptsTags = doc.getElementsByTagName('script');
   const allLoadedScripts: string[] = [];
@@ -36,28 +49,24 @@ export function scriptLoader(dynamicScripts: IDynamicScript[], doc = document) {
     if (allLoadedScripts.indexOf(src.scr) >= 0) {
       continue;
     }
-    loadPromises.push(loadScript(src, doc));
+    loadPromises.push(loadScript(src, hostElement, doc));
   }
 
   return Promise.all(loadPromises);
 }
 
-function loadScript(src: IDynamicScript, doc: Document) {
+function loadScript(
+  src: IDynamicScript,
+  hostElement: HTMLElement,
+  doc: Document,
+) {
   return new Promise(resolve => {
     const node = doc.createElement('script');
 
     // Set Attributes
     setAttributes(node, src.opt);
 
-    const host =
-      doc.getElementsByTagName('head')[0] ||
-      doc.getElementsByTagName('body')[0];
-
-    if (!host) {
-      throw new Error('No <head> or <body> tags found.');
-    }
-
-    host.appendChild(node);
+    hostElement.appendChild(node);
 
     // after load events
     // cross browser handling of onLoaded event

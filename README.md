@@ -38,11 +38,49 @@ await scriptLoader([
 ]);
 ```
 
-Results in appending the following script node to DOM (inside the `<head>` tag).
+Results in appending the following script node to DOM (inside the `<head>` or `<body>` tag).
 
 ```html
 <script async type=​"text/​javascript" src=​"https://.../​firebaseui.js">​</script>​
 ```
+
+## APIs
+
+```ts
+import { scriptLoader } from '@vaju/script-loader';
+
+// ...
+
+await scriptLoader(
+  dynamicScripts,
+  hostElement, // optional
+  document, // optional
+);
+```
+
+Where, **`dynamicScripts`** has the following form:
+
+```ts
+const dynamicScripts = [
+  {
+    src: 'script src url',
+    // optional opt
+    opt: {
+      async: true, // (default) script will have async attribute
+      type: 'text/javascript', // (default)
+      attrs: {}, // optional map of attributes. Default is empty.
+    },
+  },
+];
+```
+
+Optional **hostElement** is an `HTMLElement` to which the `<script>` tag is attached. Default is `<head> || <body>`
+
+```ts
+const hostElement = document.getElementsByTagName('head')[0];
+```
+
+Optional `document` object. Default is `document`.
 
 ## Licence
 
