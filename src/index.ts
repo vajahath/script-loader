@@ -18,7 +18,7 @@ const DEFAULTS: IScriptLoaderOpt = {
 
 export function scriptLoader(
   dynamicScripts: IDynamicScript[],
-  hostElement: HTMLElement,
+  hostElement?: HTMLElement,
   doc = document,
 ) {
   // where to attach the script tag
