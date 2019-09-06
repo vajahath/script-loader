@@ -19,7 +19,7 @@ npm i @vaju/script-loader
 ## Usage
 
 ```ts
-import { scriptLoader } from 'load-script-2';
+import { scriptLoader } from '@vaju/script-loader';
 
 // ...
 
