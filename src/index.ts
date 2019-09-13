@@ -5,13 +5,13 @@ export interface IDynamicScript {
 export type IScriptLoaderOpt = Partial<I_SCRIPT_LOADER_CONFIG_RAW>;
 
 interface I_SCRIPT_LOADER_CONFIG_RAW {
-  async: boolean;
+  loadingMethod: 'defer' | 'async' | null;
   attrs: object;
   type: 'text/javascript' | string;
 }
 
 const DEFAULTS: IScriptLoaderOpt = {
-  async: true,
+  loadingMethod: 'defer',
   attrs: {},
   type: 'text/javascript',
 };
@@ -104,9 +104,10 @@ function setAttributes(
 ) {
   const mergedOpt = Object.assign({}, opt, DEFAULTS);
 
-  if (mergedOpt.async) {
-    node.setAttribute('async', '');
+  if (mergedOpt.loadingMethod) {
+    node.setAttribute(mergedOpt.loadingMethod, '');
   }
+
   if (mergedOpt.type) {
     node.setAttribute('type', mergedOpt.type);
   }
