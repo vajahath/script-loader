@@ -1,6 +1,6 @@
 {
   "name": "@vaju/script-loader",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Promise based script loading for browsers",
   "browser": "dist/index.js",
   "types": "dist/index.d.ts",

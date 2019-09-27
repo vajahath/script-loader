@@ -1,6 +1,6 @@
 # script-loader
 
-Promise based dynamic scripts loader for **browsers**. (`@vaju/script-loader`)
+Promise based dynamic scripts loader for **browsers**.
 
 ## Why
 
@@ -10,6 +10,8 @@ Promise based dynamic scripts loader for **browsers**. (`@vaju/script-loader`)
 - Promise ready.
 - Support for [`defer`(default), `async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#Attributes).
 - No dependencies, tiny (1.2 KB).
+
+## `defer` vs `async`
 
 ![loading diff](https://i.stack.imgur.com/wfL82.png)
 
@@ -85,11 +87,11 @@ const hostElement = document.getElementsByTagName('head')[0];
 
 Optional `document` object. Default is `document`.
 
-## v1 to v2 migration giude
+## v1 to v2 Migration Giude
 
 The `{ "async": true }` property in the `opt` is now managed by the **optional** `loadingMethod` property in the `opt`.
 
-The `loadingMethod` can have `defer`(default) or `async` values. [Learn more about these properties at MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#Attributes).
+The `loadingMethod` can have `defer`(default) or `async` values. [Learn more about these properties in MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#Attributes).
 
 ## Licence
 
